@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HowToUseCheckboxes.MainPage">
+    <StackLayout>
+        <Label Text="How to use CheckBoxes:"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"/>
+        <StackLayout Spacing="100"
+                     Orientation="Horizontal"
+                     HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand">
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="VehicleCheckbox" Text="VehicleCheckBox"/>
+                <CheckBox x:Name="VehicleCheckbox"
+                          IsChecked="False"
+                          HorizontalOptions="Center">
+                    <CheckBox.Triggers>
+                        <DataTrigger TargetType="CheckBox"
+                                     Binding="{Binding Source={x:Reference DocumentCheckbox}, Path=IsChecked}"
+                                     Value="True">
+                            <Setter Property="IsChecked"
+                                    Value="False" />
+                        </DataTrigger>
+                    </CheckBox.Triggers>
+                </CheckBox>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="DocumentCheckbox" Text="DocumentCheckBox"/>
+                <CheckBox x:Name="DocumentCheckbox"
+                          IsChecked="False"
+                          HorizontalOptions="Center">
+                    <CheckBox.Triggers>
+                        <DataTrigger TargetType="CheckBox"
+                                     Binding="{Binding Source={x:Reference VehicleCheckbox}, Path=IsChecked}"
+                                     Value="True">
+                            <Setter Property="IsChecked"
+                                    Value="False" />
+                        </DataTrigger>
+                    </CheckBox.Triggers>
+                </CheckBox>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
