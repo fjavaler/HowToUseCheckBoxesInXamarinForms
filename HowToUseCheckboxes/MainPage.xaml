@@ -5,16 +5,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="HowToUseCheckboxes.MainPage">
-    <StackLayout>
+    <StackLayout BackgroundColor="AliceBlue" Orientation="Vertical">
         <Label Text="How to use CheckBoxes:"
                HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand"/>
-        <StackLayout Spacing="100"
+               VerticalOptions="CenterAndExpand"
+               FontSize="Title"/>
+        <StackLayout Spacing="40"
                      Orientation="Horizontal"
                      HorizontalOptions="CenterAndExpand"
                      VerticalOptions="CenterAndExpand">
             <StackLayout Orientation="Vertical">
-                <Label x:Name="VehicleCheckbox" Text="VehicleCheckBox"/>
+                <Label x:Name="VehicleCheckboxLabel"
+                       Text="Vehicle CheckBox"
+                       FontSize="Body"/>
                 <CheckBox x:Name="VehicleCheckbox"
                           IsChecked="False"
                           HorizontalOptions="Center">
@@ -29,7 +32,9 @@
                 </CheckBox>
             </StackLayout>
             <StackLayout Orientation="Vertical">
-                <Label x:Name="DocumentCheckbox" Text="DocumentCheckBox"/>
+                <Label x:Name="DocumentCheckboxLabel"
+                       Text="Document CheckBox"
+                       FontSize="Body"/>
                 <CheckBox x:Name="DocumentCheckbox"
                           IsChecked="False"
                           HorizontalOptions="Center">
