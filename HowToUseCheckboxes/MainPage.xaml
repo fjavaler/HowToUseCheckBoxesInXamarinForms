@@ -23,10 +23,16 @@
                           HorizontalOptions="Center">
                     <CheckBox.Triggers>
                         <DataTrigger TargetType="CheckBox"
-                                     Binding="{Binding Source={x:Reference DocumentCheckbox}, Path=IsChecked}"
+                                     Binding="{Binding IsChecked, Source={x:Reference DocumentCheckbox}}"
                                      Value="True">
                             <Setter Property="IsChecked"
                                     Value="False" />
+                            </DataTrigger>
+                        <DataTrigger TargetType="CheckBox"
+                                     Binding="{Binding IsChecked, Source={x:Reference VehicleCheckbox}}"
+                                     Value="True">
+                            <Setter Property="Color"
+                                    Value="Red"/>
                         </DataTrigger>
                     </CheckBox.Triggers>
                 </CheckBox>
@@ -40,7 +46,7 @@
                           HorizontalOptions="Center">
                     <CheckBox.Triggers>
                         <DataTrigger TargetType="CheckBox"
-                                     Binding="{Binding Source={x:Reference VehicleCheckbox}, Path=IsChecked}"
+                                     Binding="{Binding IsChecked, Source={x:Reference VehicleCheckbox}}"
                                      Value="True">
                             <Setter Property="IsChecked"
                                     Value="False" />
